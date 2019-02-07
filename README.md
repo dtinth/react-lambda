@@ -25,6 +25,7 @@ function App() {
           .fill()
           .map((_, i) =>
             λ(i, () => {
+              // Hooks inside component body, how cool is that!
               const [v, setV] = useState(0)
               const inc = () => setV(v => v + 1)
               return <li>{v} <button onClick={inc}>++</button></li>
@@ -46,4 +47,4 @@ import λ from 'react-lambda'
 
 ### λ([key,] f)
 
-Returns an optionally-keyed React elements that executes `f`.
+Returns an optionally-keyed React element that executes `f`.
