@@ -1,0 +1,41 @@
+{
+  "devDependencies": {
+    "@types/react": "^16.8.0",
+    "react": "^16.8.0",
+    "rollup": "^0.66.6",
+    "rollup-plugin-typescript": "^1.0.0",
+    "tslib": "^1.9.3",
+    "typescript": "^3.3.3"
+  },
+  "name": "react-lambda",
+  "description": "Anonymous functional components for React.",
+  "version": "1.0.0-rc.0",
+  "main": "umd/react-lambda.js",
+  "module": "esm/index.js",
+  "typings": "esm/index.d.ts",
+  "dependencies": {},
+  "scripts": {
+    "build": "yarn build:umd && yarn build:esm",
+    "build:umd": "rollup -c",
+    "build:esm": "tsc",
+    "prepare": "yarn build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dtinth/react-lambda.git"
+  },
+  "keywords": [
+    "react",
+    "hooks"
+  ],
+  "author": "Thai Pangsakulyanont <org.yi.dttvb@gmail.com> (http://dt.in.th/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dtinth/react-lambda/issues"
+  },
+  "homepage": "https://github.com/dtinth/react-lambda#readme",
+  "files": [
+    "umd/react-lambda.js",
+    "esm"
+  ]
+}
