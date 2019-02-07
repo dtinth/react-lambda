@@ -8,7 +8,7 @@
     "typescript": "^3.3.3"
   },
   "name": "react-lambda",
-  "description": "Anonymous functional components for React.",
+  "description": "Anonymous functional components for React. How about using hooks inside hooks?",
   "version": "1.0.0-rc.0",
   "main": "umd/react-lambda.js",
   "module": "esm/index.js",

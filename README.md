@@ -4,20 +4,20 @@ Anonymous functional components for React. How about using hooks inside hooks?
 
 ## Example
 
+<!-- prettier-ignore-start -->
+
 ```js
 import λ from 'react-lambda'
 
 function App() {
-  const [n, setN] = React.useState(3)
+  const [n, setN] = useState(3)
   const more = () => setN(n => n + 1)
   const less = () => setN(n => n - 1)
   return (
     <div className="App">
       <h1>react-lambda demo</h1>
       <p>
-        <button onClick={less} disabled={!n}>
-          less
-        </button>
+        <button onClick={less} disabled={!n}>less</button>
         <button onClick={more}>more</button>
       </p>
       <ol>
@@ -25,13 +25,9 @@ function App() {
           .fill()
           .map((_, i) =>
             λ(i, () => {
-              const [v, setV] = React.useState(0)
+              const [v, setV] = useState(0)
               const inc = () => setV(v => v + 1)
-              return (
-                <li>
-                  {v} <button onClick={inc}>++</button>
-                </li>
-              )
+              return <li>{v} <button onClick={inc}>++</button></li>
             })
           )}
       </ol>
@@ -39,6 +35,8 @@ function App() {
   )
 }
 ```
+
+<!-- prettier-ignore-end -->
 
 ## API
 
