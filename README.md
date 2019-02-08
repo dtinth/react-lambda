@@ -2,7 +2,29 @@
 
 Anonymous functional components for React. How about using hooks inside hooks?
 
-## Example
+## Motivation
+
+I wished there’s a way to use hooks inside a component’s *subtree*.
+That means all the state and effects should be localized in that subtree only.
+Using it in my current project, it helped me write more cohesive code:
+
+```js
+import λ from 'react-lambda'
+function AppNav() {
+  return <Nav>
+    <Nav.Item to="/">Home</Nav.Item>
+    <Nav.Item to="/about">About</Nav.Item>
+    <Nav.Item to="/contact">Contact</Nav.Item>
+    {λ(() => {
+      // I want to display a clock here but don’t want the whole AppNav re-rendered.
+      const time = useCurrentTime()
+      return <Nav.Item>{formatTime(time)}</Nav.Item>
+    })}
+  </Nav>
+}
+```
+
+## Another example
 
 <!-- prettier-ignore-start -->
 
